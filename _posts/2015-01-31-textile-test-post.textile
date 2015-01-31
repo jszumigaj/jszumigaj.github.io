@@ -1,0 +1,36 @@
+---
+layout: post
+title: Textile test
+---
+
+h1. {{ page.title }}
+
+This is example post in textile format
+
+h2. Some code
+
+Take a look at a piece of my code:
+
+<pre><code class="cs">
+        public static T Create(Owned<T> owned, params IInterceptor[] interceptors)
+        {
+            var instance = owned.Value;
+            var options = new ProxyGenerationOptions();
+            options.AddMixinInstance(instance);
+            var generator = new ProxyGenerator();
+            var proxy = generator.CreateClassProxy(
+                typeof(DisposableMixin<T>),
+                options,
+                new object[] { owned },
+                interceptors);
+            return (T)proxy;
+        }
+</code></pre>
+
+Some text
+
+h2. Gist
+
+The same code from my Gist:
+
+{% gist jszumigaj/9834304 %}
